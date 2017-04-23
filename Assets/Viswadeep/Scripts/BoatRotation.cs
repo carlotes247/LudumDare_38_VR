@@ -5,6 +5,7 @@ using UnityEngine;
 public class BoatRotation : MonoBehaviour {
 
     Rigidbody thisRigidBody;
+    Vector3 velocityDirection;
 
     public int rotationSpeed = 1;
 	// Use this for initialization
@@ -14,6 +15,7 @@ public class BoatRotation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(thisRigidBody.velocity), Time.deltaTime * rotationSpeed);
+        velocityDirection = new Vector3(thisRigidBody.velocity.x, 0, thisRigidBody.velocity.z);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(velocityDirection), Time.deltaTime * rotationSpeed);
 	}
 }

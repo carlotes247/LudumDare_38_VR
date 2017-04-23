@@ -11,9 +11,13 @@ public class Head_Collider_Script : MonoBehaviour {
     public float foodPoints = 10;
     public GameObject foodDeathAnimation;
 
+    AudioSource headAudioSource;
+    public AudioClip biteSound;
+
 	// Use this for initialization
 	void Start () {
-		
+        headAudioSource = GetComponent<AudioSource>();
+        headAudioSource.clip = biteSound;
 	}
 	
 	// Update is called once per frame
@@ -37,7 +41,7 @@ public class Head_Collider_Script : MonoBehaviour {
             GameObject foodDeathInstance = GameObject.Instantiate(foodDeathAnimation, otherCollider.gameObject.transform.position, Quaternion.identity);
             DestroyObject(otherCollider.gameObject);
             DestroyObject(foodDeathInstance, 0.25f);
-
+            headAudioSource.Play();
         }
     }
 
