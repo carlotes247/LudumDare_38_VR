@@ -8,6 +8,11 @@ TagManager:
   - Water
   - ExcludeTeleport
   - Fire
+  - FxTemporaire
+  - projectile
+  - TeleportIgnore
+  - ExitOption
+  - PlayOption
   layers:
   - Default
   - TransparentFX
