@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnTriggerEnterIvokeEvent : MonoBehaviour {
+public class HungryBar_Script : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
