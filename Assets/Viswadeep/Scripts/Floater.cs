@@ -11,6 +11,7 @@ public class Floater : MonoBehaviour {
     void Start()
     {
         rigidBody_this = GetComponent<Rigidbody>();
+        if (floatHeight == null || floatHeight == 0.0f) { floatHeight = 0.01f; }
     }
 
 	void FixedUpdate () {
