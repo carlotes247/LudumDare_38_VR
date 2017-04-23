@@ -55,10 +55,10 @@ GameObject:
   - component: {fileID: 4905535155169442}
   - component: {fileID: 54353647522246484}
   - component: {fileID: 114254482532477040}
-  - component: {fileID: 65628132056507758}
   - component: {fileID: 114175183527450618}
+  - component: {fileID: 65460653324855180}
   m_Layer: 8
-  m_Name: FloatingObjectApple
+  m_Name: FloatingObjectAppleMC
   m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -227,17 +227,17 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65628132056507758
+--- !u!65 &65460653324855180
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1471941868034992}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114175183527450618
 MonoBehaviour:

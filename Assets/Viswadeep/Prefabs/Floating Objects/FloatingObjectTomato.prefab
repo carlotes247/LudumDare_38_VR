@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4038116735983866}
   - component: {fileID: 54861906633010802}
   - component: {fileID: 114764699797928194}
-  - component: {fileID: 65250649183886472}
   - component: {fileID: 114395459818296328}
+  - component: {fileID: 65764843132463142}
   m_Layer: 8
   m_Name: FloatingObjectTomato
   m_TagString: Food
@@ -128,7 +128,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65250649183886472
+--- !u!65 &65764843132463142
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -138,7 +138,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114395459818296328
 MonoBehaviour:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disableWhenIdle: 1
-  touchHighlightColor: {r: 0.2647059, g: 1, b: 0.4827586, a: 0}
+  touchHighlightColor: {r: 0, g: 1, b: 0.2965517, a: 0}
   allowedTouchControllers: 0
   ignoredColliders: []
   isGrabbable: 1

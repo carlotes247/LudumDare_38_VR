@@ -36,7 +36,7 @@ public class Head_Collider_Script : MonoBehaviour {
             eatFood(foodPoints);
             GameObject foodDeathInstance = GameObject.Instantiate(foodDeathAnimation, otherCollider.gameObject.transform.position, Quaternion.identity);
             DestroyObject(otherCollider.gameObject);
-            DestroyObject(foodDeathInstance, 1.0f);
+            DestroyObject(foodDeathInstance, 0.25f);
 
         }
     }
@@ -44,5 +44,6 @@ public class Head_Collider_Script : MonoBehaviour {
     public void eatFood(float amount)
     {
         currentHealth += amount;
+        if (currentHealth > maxHealth) { currentHealth = maxHealth; }
     }
 }
