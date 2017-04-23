@@ -23,4 +23,17 @@ public class Floater : MonoBehaviour {
             rigidBody_this.AddForceAtPosition(uplift, actionPoint);
 		}
 	}
+
+    void OnTriggerStay(Collider otherCollider)
+    {
+        if (otherCollider.gameObject.CompareTag("GameController"))
+        {
+            HandScript handScript_collider = otherCollider.gameObject.GetComponent<HandScript>();
+            if (handScript_collider.isHandClosed())
+            {
+                gameObject.transform.position = otherCollider.gameObject.transform.position;
+                gameObject.transform.localRotation = otherCollider.gameObject.transform.localRotation;
+            }
+        }
+    }
 }
