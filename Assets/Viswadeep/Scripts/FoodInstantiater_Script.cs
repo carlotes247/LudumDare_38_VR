@@ -8,10 +8,10 @@ public class FoodInstantiater_Script : MonoBehaviour {
     public float instantiate_delay_multiplier=1;
     public float instantiate_delay_multiplier_change = 0.01f;
     public GameObject[] foodPrefabs;
-    public int x_min;
-    public int x_max;
-    public int y_min;
-    public int y_max;
+    public int xMin;
+    public int xMax;
+    public int zMin;
+    public int zMax;
     public int food_instantiate_height=5;
 
     float time_elapsed=0;
@@ -28,7 +28,7 @@ public class FoodInstantiater_Script : MonoBehaviour {
 
         if ((instantiate_delay_multiplier * time_elapsed) > instantiate_delay)
         {
-            Vector3 position = new Vector3(Random.Range(x_min, x_max), food_instantiate_height, Random.Range(y_min, y_max));
+            Vector3 position = new Vector3(Random.Range(xMin, xMax), food_instantiate_height, Random.Range(zMin, zMax));
             GameObject food = foodPrefabs[Random.Range(0, foodPrefabs.Length)];
             GameObject.Instantiate(food, position, Quaternion.identity);
 

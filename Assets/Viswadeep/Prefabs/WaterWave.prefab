@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 137567209049405904}
   - component: {fileID: 183576444142739184}
   - component: {fileID: 95737709230765932}
+  - component: {fileID: 114449123556403912}
   m_Layer: 0
   m_Name: WaterWave
   m_TagString: Untagged
@@ -67,6 +68,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114449123556403912
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093841176097832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69330b71e971d3e4b8fb8d044880cbb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transparency: 0.3
 --- !u!137 &137567209049405904
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -109,7 +122,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 5, y: 0, z: 5}
+    m_Extent: {x: 5, y: 1.110223e-16, z: 5}
   m_DirtyAABB: 0
 --- !u!183 &183576444142739184
 Cloth:

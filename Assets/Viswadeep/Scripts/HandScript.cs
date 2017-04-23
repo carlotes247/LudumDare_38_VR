@@ -17,6 +17,6 @@ public class HandScript : MonoBehaviour {
     public bool isHandClosed()
     {
         //TODO GET IF BUTTON IS PRESSED ON THE CONTROLLER
-        return false;
+        return true;
     }
 }
