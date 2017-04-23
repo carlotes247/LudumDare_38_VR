@@ -55,7 +55,11 @@ MonoBehaviour:
   instantiate_delay_multiplier: 1
   instantiate_delay_multiplier_change: 0.05
   foodPrefabs:
-  - {fileID: 0}
+  - {fileID: 1995073311291262, guid: db693a8cd6d34eb419c0ade06dbf07dc, type: 2}
+  - {fileID: 1471941868034992, guid: 222bc1dd7581e0743b06f0d243875dda, type: 2}
+  - {fileID: 1540257424159642, guid: 2ca29ac25948d6e43a6099d54ece5817, type: 2}
+  - {fileID: 1721451640986122, guid: 5c2f9529cf3290544aff4e724dd7e799, type: 2}
+  - {fileID: 1633568581857174, guid: dccd61f2d16845b4e84e4dee87c619bf, type: 2}
   xMin: -20
   xMax: 20
   zMin: -20

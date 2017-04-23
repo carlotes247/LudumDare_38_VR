@@ -15,18 +15,31 @@ public class Floater : MonoBehaviour {
     }
 
 	void FixedUpdate () {
-		Vector3 actionPoint = transform.position + transform.TransformDirection(buoyancyCentreOffset);
+/**		Vector3 actionPoint = transform.position + transform.TransformDirection(buoyancyCentreOffset);
 		float forceFactor = 1f - ((actionPoint.y - waterLevel) / floatHeight);
 		
 		if (forceFactor > 0f) {
             Vector3 uplift = -Physics.gravity * (forceFactor - rigidBody_this.velocity.y * bounceDamp);
             rigidBody_this.AddForceAtPosition(uplift, actionPoint);
-		}
+		}*/
 	}
 
     void OnTriggerStay(Collider otherCollider)
     {
-        if (otherCollider.gameObject.CompareTag("GameController"))
+        if (otherCollider.gameObject.CompareTag("Water"))
+        {
+            Vector3 actionPoint = transform.position + transform.TransformDirection(buoyancyCentreOffset);
+            float forceFactor = 1f - ((actionPoint.y - otherCollider.gameObject.transform.position.y) / floatHeight);
+
+            if (forceFactor > 0f)
+            {
+                Vector3 uplift = -Physics.gravity * (forceFactor - rigidBody_this.velocity.y * bounceDamp);
+                rigidBody_this.AddForceAtPosition(uplift, actionPoint);
+            }
+        }
+
+
+/**        if (otherCollider.gameObject.CompareTag("GameController"))
         {
             HandScript handScript_collider = otherCollider.gameObject.GetComponent<HandScript>();
             if (handScript_collider.isHandClosed())
@@ -34,6 +47,6 @@ public class Floater : MonoBehaviour {
                 gameObject.transform.position = otherCollider.gameObject.transform.position;
                 gameObject.transform.localRotation = otherCollider.gameObject.transform.localRotation;
             }
-        }
+        }*/
     }
 }

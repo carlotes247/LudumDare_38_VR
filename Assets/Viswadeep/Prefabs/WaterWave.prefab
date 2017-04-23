@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 183576444142739184}
   - component: {fileID: 95737709230765932}
   - component: {fileID: 114449123556403912}
+  - component: {fileID: 65568975034999144}
   m_Layer: 0
   m_Name: WaterWave
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1093841176097832}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalScale: {x: 15, y: 1, z: 15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,6 +52,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093841176097832}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65568975034999144
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093841176097832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 15, y: 50, z: 15}
+  m_Center: {x: 0, y: -25, z: 0}
 --- !u!95 &95737709230765932
 Animator:
   serializedVersion: 3
@@ -79,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69330b71e971d3e4b8fb8d044880cbb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transparency: 0.3
+  transparency: 0.35
 --- !u!137 &137567209049405904
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -122,7 +135,7 @@ SkinnedMeshRenderer:
   m_RootBone: {fileID: 0}
   m_AABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 5, y: 1.110223e-16, z: 5}
+    m_Extent: {x: 5.0000005, y: 1.110223e-16, z: 5.0000005}
   m_DirtyAABB: 0
 --- !u!183 &183576444142739184
 Cloth:
@@ -131,11 +144,11 @@ Cloth:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093841176097832}
   m_Enabled: 1
-  m_StretchingStiffness: 1
+  m_StretchingStiffness: 0.5
   m_BendingStiffness: 0
-  m_UseTethers: 1
-  m_UseGravity: 1
-  m_Damping: 0.25
+  m_UseTethers: 0
+  m_UseGravity: 0
+  m_Damping: 0
   m_ExternalAcceleration: {x: 0, y: 0, z: 0}
   m_RandomAcceleration: {x: 2.5, y: 0.9, z: 0.91}
   m_WorldVelocityScale: 0.03
