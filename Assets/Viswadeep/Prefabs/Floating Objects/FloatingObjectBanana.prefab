@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4663070026069286}
   - component: {fileID: 33752446643973550}
   - component: {fileID: 23471497435830436}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: banana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114259739867282656}
   - component: {fileID: 65783767810088312}
   - component: {fileID: 114209386242327704}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FloatingObjectBanana
   m_TagString: Food
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1721451640986122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 26.4, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4663070026069286}
   m_Father: {fileID: 0}
@@ -138,7 +138,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114209386242327704
 MonoBehaviour:
