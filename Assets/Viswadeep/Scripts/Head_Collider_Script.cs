@@ -25,7 +25,7 @@ public class Head_Collider_Script : MonoBehaviour {
             Debug.Log("Dead!");
         }
 
-        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+        healthBar.sizeDelta = new Vector2(currentHealth/10, healthBar.sizeDelta.y);
     }
 	
 
