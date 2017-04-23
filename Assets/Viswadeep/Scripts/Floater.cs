@@ -5,6 +5,7 @@ public class Floater : MonoBehaviour {
 	public float waterLevel, floatHeight;
 	public Vector3 buoyancyCentreOffset;
 	public float bounceDamp;
+    public AudioClip waterDrop;
 
     private Rigidbody rigidBody_this;
 
@@ -12,6 +13,7 @@ public class Floater : MonoBehaviour {
     {
         rigidBody_this = GetComponent<Rigidbody>();
         if (floatHeight == null || floatHeight == 0.0f) { floatHeight = 0.01f; }
+        waterDrop.LoadAudioData();
     }
 
 	void FixedUpdate () {
@@ -23,6 +25,17 @@ public class Floater : MonoBehaviour {
             rigidBody_this.AddForceAtPosition(uplift, actionPoint);
 		}*/
 	}
+
+    void OnTriggerEnter(Collider otherCollider)
+    {
+        if (otherCollider.gameObject.CompareTag("Water"))
+        {
+            AudioSource audioSource = new AudioSource();
+            audioSource.clip = waterDrop;
+            audioSource.Play();
+        }
+    }
+
 
     void OnTriggerStay(Collider otherCollider)
     {
