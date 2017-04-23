@@ -6,7 +6,7 @@ public class FoodInstantiater_Script : MonoBehaviour {
 
     public float instantiate_delay = 1;
     public float instantiate_delay_multiplier=1;
-    public float instantiate_delay_multiplier_change = 0.01f;
+    public float instantiate_delay_multiplier_change = 0.0f;
     public GameObject[] foodPrefabs;
     public int xMin;
     public int xMax;
