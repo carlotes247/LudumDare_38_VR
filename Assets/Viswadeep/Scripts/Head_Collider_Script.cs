@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Head_Collider_Script : MonoBehaviour {
 
+    public const float maxHealth = 100;
+    public float currentHealth = maxHealth;
+    public RectTransform healthBar;
+    public float hungerMultiplier=1;
+    public float foodPoints = 10;
+    public GameObject foodDeathAnimation;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,14 +18,31 @@ public class Head_Collider_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+		currentHealth -= hungerMultiplier * Time.deltaTime;
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            Debug.Log("Dead!");
+        }
+
+        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
+    }
+	
 
     void OnTriggerStay(Collider otherCollider)
     {
         if (otherCollider.gameObject.CompareTag("Food"))
         {
+            eatFood(foodPoints);
+            GameObject foodDeathInstance = GameObject.Instantiate(foodDeathAnimation, otherCollider.gameObject.transform.position, Quaternion.identity);
             DestroyObject(otherCollider.gameObject);
+            DestroyObject(foodDeathInstance, 1.0f);
+
         }
+    }
+
+    public void eatFood(float amount)
+    {
+        currentHealth += amount;
     }
 }
