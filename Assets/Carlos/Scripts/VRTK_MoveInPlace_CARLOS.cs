@@ -119,11 +119,20 @@ namespace VRTK
         /// <summary>
         /// Flag that controls if the controller is on the trigger
         /// </summary>
-        private bool m_OnTrigger;
+        [SerializeField]
+        private bool m_BothHandsIn;
         /// <summary>
         /// Flag that controls if the controller is on the trigger
         /// </summary>
-        public bool OnTrigger { get { return m_OnTrigger; } set { m_OnTrigger = value; } }
+        public bool BothHandsIn { get { return m_BothHandsIn; } set { m_BothHandsIn = value; } }
+        /// <summary>
+        /// Flag to know when the left hand is in
+        /// </summary>
+        public bool LeftHandIn;
+        /// <summary>
+        /// Flag to know when the right hand is in
+        /// </summary>
+        public bool RightHandIn;
 
         /// <summary>
         /// Set the control options and modify the trackables to match.
@@ -251,7 +260,7 @@ namespace VRTK
 
         protected virtual bool MovementActivated()
         {
-            return ((active && m_OnTrigger) || engageButton == VRTK_ControllerEvents.ButtonAlias.Undefined);
+            return ((active && m_BothHandsIn) || engageButton == VRTK_ControllerEvents.ButtonAlias.Undefined);
         }
 
         protected virtual void CheckControllerState(GameObject controller, bool controllerState, ref bool subscribedState, ref bool previousState)
@@ -501,5 +510,34 @@ namespace VRTK
                 }
             }
         }
+
+        #region CARLOSFUNCTIONS
+
+        /// <summary>
+        /// Checks if both hands are in 
+        /// </summary>
+        public void CheckBothHandsIn ()
+        {
+            if (LeftHandIn && RightHandIn)
+            {
+                m_BothHandsIn = true;
+            }
+            else
+            {
+                m_BothHandsIn = false;
+            }
+        }
+
+        public void SetLeftHandIn (bool value)
+        {
+            LeftHandIn = value;
+        }
+
+        public void SetRightHandIn (bool value)
+        {
+            RightHandIn = value;
+        }
+
+        #endregion
     }
 }
