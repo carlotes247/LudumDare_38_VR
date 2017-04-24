@@ -16,25 +16,30 @@ public class FoodInstantiater_Script : MonoBehaviour {
 
     float time_elapsed=0;
 
+    public bool GameStarted;
+
 
 	// Use this for initialization
 	void Start () {
-		
+        GameStarted = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        time_elapsed += Time.deltaTime;
-
-        if ((instantiate_delay_multiplier * time_elapsed) > instantiate_delay)
+        if (GameStarted)
         {
-            Vector3 position = new Vector3(Random.Range(xMin, xMax), food_instantiate_height, Random.Range(zMin, zMax));
-            GameObject food = foodPrefabs[Random.Range(0, foodPrefabs.Length)];
-            GameObject.Instantiate(food, position, Quaternion.identity);
+            time_elapsed += Time.deltaTime;
 
-            time_elapsed = 0.0f;
-            instantiate_delay_multiplier -= instantiate_delay_multiplier_change;
-            if (instantiate_delay_multiplier <= 0) { instantiate_delay_multiplier = instantiate_delay_multiplier_change; }
+            if ((instantiate_delay_multiplier * time_elapsed) > instantiate_delay)
+            {
+                Vector3 position = new Vector3(Random.Range(xMin, xMax), food_instantiate_height, Random.Range(zMin, zMax));
+                GameObject food = foodPrefabs[Random.Range(0, foodPrefabs.Length)];
+                GameObject.Instantiate(food, position, Quaternion.identity);
+
+                time_elapsed = 0.0f;
+                instantiate_delay_multiplier -= instantiate_delay_multiplier_change;
+                if (instantiate_delay_multiplier <= 0) { instantiate_delay_multiplier = instantiate_delay_multiplier_change; }
+            } 
         }
 	}
 }
