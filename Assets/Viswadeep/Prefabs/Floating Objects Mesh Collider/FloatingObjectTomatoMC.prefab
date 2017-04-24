@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 54861906633010802}
   - component: {fileID: 114764699797928194}
   - component: {fileID: 114395459818296328}
-  - component: {fileID: 65764843132463142}
   - component: {fileID: 82141597349781774}
+  - component: {fileID: 135686981032027146}
   m_Layer: 8
   m_Name: FloatingObjectTomatoMC
   m_TagString: Food
@@ -129,18 +129,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65764843132463142
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1760392785760818}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82141597349781774
 AudioSource:
   m_ObjectHideFlags: 1
@@ -267,3 +255,15 @@ MonoBehaviour:
   buoyancyCentreOffset: {x: 0, y: 0, z: 0}
   bounceDamp: 0.75
   waterDrop: {fileID: 8300000, guid: d359a6f9ddec2414e909ec5504a039c3, type: 3}
+--- !u!135 &135686981032027146
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1760392785760818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0.23, z: 0}

@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4446319343724802}
   - component: {fileID: 54630873538457684}
   - component: {fileID: 114061961974606896}
-  - component: {fileID: 65450554370121886}
   - component: {fileID: 114346372676457920}
   - component: {fileID: 82973496122151762}
+  - component: {fileID: 136844505940878162}
   m_Layer: 8
   m_Name: FloatingObjectLeekMC
   m_TagString: Food
@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 1742480132808652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 26.4, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4920014701857832}
   m_Father: {fileID: 0}
@@ -129,18 +129,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65450554370121886
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1742480132808652}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.51, y: 0.51, z: 0.57}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82973496122151762
 AudioSource:
   m_ObjectHideFlags: 1
@@ -267,3 +255,16 @@ MonoBehaviour:
   useOverrideButton: 0
   allowedUseControllers: 0
   usingState: 0
+--- !u!136 &136844505940878162
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1742480132808652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.05
+  m_Height: 0.42
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.01, z: 0}

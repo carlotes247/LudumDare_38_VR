@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4588333056079520}
   - component: {fileID: 54955338417725754}
   - component: {fileID: 114898317008010756}
-  - component: {fileID: 65105578246186874}
   - component: {fileID: 114326129646701512}
   - component: {fileID: 82553928321026586}
+  - component: {fileID: 136866955154914308}
   m_Layer: 8
   m_Name: FloatingObjectAvocadoMC
   m_TagString: Food
@@ -129,18 +129,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65105578246186874
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1540257424159642}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82553928321026586
 AudioSource:
   m_ObjectHideFlags: 1
@@ -267,3 +255,16 @@ MonoBehaviour:
   buoyancyCentreOffset: {x: 0, y: 0, z: 0}
   bounceDamp: 0.75
   waterDrop: {fileID: 8300000, guid: d359a6f9ddec2414e909ec5504a039c3, type: 3}
+--- !u!136 &136866955154914308
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1540257424159642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32
+  m_Height: 1.38
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.03, z: 0}

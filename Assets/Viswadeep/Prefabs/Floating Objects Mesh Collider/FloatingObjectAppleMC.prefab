@@ -56,8 +56,8 @@ GameObject:
   - component: {fileID: 54353647522246484}
   - component: {fileID: 114254482532477040}
   - component: {fileID: 114175183527450618}
-  - component: {fileID: 65460653324855180}
   - component: {fileID: 82236104109419584}
+  - component: {fileID: 135492477952253144}
   m_Layer: 8
   m_Name: FloatingObjectAppleMC
   m_TagString: Food
@@ -228,18 +228,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65460653324855180
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1471941868034992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82236104109419584
 AudioSource:
   m_ObjectHideFlags: 1
@@ -366,3 +354,15 @@ MonoBehaviour:
   buoyancyCentreOffset: {x: 0, y: 0, z: 0}
   bounceDamp: 0.75
   waterDrop: {fileID: 8300000, guid: d359a6f9ddec2414e909ec5504a039c3, type: 3}
+--- !u!135 &135492477952253144
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471941868034992}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}

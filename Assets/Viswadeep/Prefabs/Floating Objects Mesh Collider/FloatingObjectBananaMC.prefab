@@ -38,9 +38,9 @@ GameObject:
   - component: {fileID: 4026855052573888}
   - component: {fileID: 54465157130887844}
   - component: {fileID: 114259739867282656}
-  - component: {fileID: 65783767810088312}
   - component: {fileID: 114209386242327704}
   - component: {fileID: 82578366977173618}
+  - component: {fileID: 136728416857690762}
   m_Layer: 8
   m_Name: FloatingObjectBananaMC
   m_TagString: Food
@@ -129,18 +129,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65783767810088312
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1721451640986122}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.95, z: 2.35}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!82 &82578366977173618
 AudioSource:
   m_ObjectHideFlags: 1
@@ -267,3 +255,16 @@ MonoBehaviour:
   buoyancyCentreOffset: {x: 0, y: 0, z: 0}
   bounceDamp: 0.75
   waterDrop: {fileID: 8300000, guid: d359a6f9ddec2414e909ec5504a039c3, type: 3}
+--- !u!136 &136728416857690762
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721451640986122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1.82
+  m_Direction: 2
+  m_Center: {x: -0.09, y: 0, z: 0}
