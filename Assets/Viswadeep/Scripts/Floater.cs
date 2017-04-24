@@ -30,7 +30,7 @@ public class Floater : MonoBehaviour {
     {
         if (otherCollider.gameObject.CompareTag("Water"))
         {
-            AudioSource audioSource = new AudioSource();
+            AudioSource audioSource = GetComponent<AudioSource>();
             audioSource.clip = waterDrop;
             audioSource.Play();
         }

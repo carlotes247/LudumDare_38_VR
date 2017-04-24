@@ -106,7 +106,7 @@ namespace VRTK
         // Used to determine the direction when using a decoupling method.
         protected Vector3 initalGaze;
         // The current move speed of the player. If Move In Place is not active, it will be set to 0.00f.
-        protected float currentSpeed;
+        public float currentSpeed;
         // The current direction the player is moving. If Move In Place is not active, it will be set to Vector.zero.
         protected Vector3 direction;
         protected Vector3 previousDirection;

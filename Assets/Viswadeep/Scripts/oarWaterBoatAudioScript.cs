@@ -6,34 +6,37 @@ using VRTK;
 public class oarWaterBoatAudioScript : MonoBehaviour {
     AudioSource audioSrc;
     public AudioClip waterClick;
-    public GameObject playAreaGO;
-    VRTK_MoveInPlace_CARLOS playAreaMovementScript;
+    float maxSpeed = 3.5f;
 
-    Rigidbody boatRB;
-
-    float audioSrcLeftTimeLeft=0.0f;
-    float maxSpeed;
+    Vector3 prevPos;
+    public float currentSpeed = 0.0f;
+    float timeTillNextSound = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-        audioSrc = new AudioSource();
+        audioSrc = GetComponent<AudioSource>();
         waterClick.LoadAudioData();
         audioSrc.clip = waterClick;
-        playAreaMovementScript = playAreaGO.GetComponent<VRTK_MoveInPlace_CARLOS>();
-        maxSpeed=playAreaMovementScript.maxSpeed;
+        prevPos = gameObject.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        
-
-        if (audioSrcLeftTimeLeft <= 0.1)
+        currentSpeed = Vector3.Magnitude(gameObject.transform.position - prevPos) / Time.deltaTime;
+        if(currentSpeed>maxSpeed)
         {
-            float playAreaSpeed = playAreaMovementScript.GetSpeed();
-            audioSrcLeftTimeLeft = (maxSpeed - playAreaSpeed) / maxSpeed;
+            maxSpeed = currentSpeed;
+        }
+
+        if (!audioSrc.isPlaying && currentSpeed>1 && timeTillNextSound<=0)
+        {
+            timeTillNextSound = 1-currentSpeed / maxSpeed;
+            if (timeTillNextSound < 0) { timeTillNextSound = 0.0f; }
             audioSrc.Play();
         }
-        audioSrcLeftTimeLeft -= Time.deltaTime;
-	}
+        prevPos = gameObject.transform.position;
+        timeTillNextSound -= Time.deltaTime;
+
+    }
 
 }
